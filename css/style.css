@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --body-bg-color: #dce4e3;
+    --green: #18c29c;
+    --light-green: #8ed7c6;
+      --light-grey: #dce4e3;
+    --text-color: #084236;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+body{
+  position: relative;
+  min-width: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sidebar{
+  position: fixed;
+  width: 78px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--green);
+  padding: 6px 14px;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar .logo-content .logo{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: auto;
+}
+.sidebar .links-name {
+  opacity: 0;
+}
+.sidebar .logo-content .logo img {
+  margin-right: 5px;
+
+}
+
+.sidebar .menu {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 50px;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.sidebar ul {
+  margin-top: 20px;
+}
+
+.sidebar ul li{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 5px;
+  list-style: none;
+}
+
+.sidebar ul li input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  background-color: var(--light-green);
+  padding-left: 50px;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.sidebar ul li #btn {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  z-index: 999;
+  color: var(--text-color);
+  cursor: pointer;
+  top: 12px;
+}
+
+.sidebar ul li #btn:hover {
+  color: #fff;
+  
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 12px;
+  white-space: nowrap;
+  transition: all 0.5s ease ;
+}
+
+.sidebar ul li a:hover{
+  background-color: var(--light-grey);
+}
+.sidebar ul li img {
+  min-width: 50px;
+  height: 24px;
+  line-height: 50px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.sidebar .profile-content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: var(--text-color);
+}
+
+.sidebar .profile-content .profile {
+  position: relative;
+  height: 60px;
+  padding: 10px 6px;
+  background-color: var(--light-green);
+}
+
+.sidebar .profile-content .profile .profile-detail {
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar .profile-content .profile .profile-detail .img-user {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.sidebar .profile-content .profile .profile-detail .name-job{
+  margin-left: 15px;
+}
+
+.sidebar .profile-content .name-job .name {
+  font-size: 15px;
+}
+.sidebar .profile-content .name-job .job {
+  font-size: 12px;
+}
+.sidebar .profile-content .logo-out {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  bottom: 8px;
+  min-width: 24px;
+  line-height: 24px;
+  font-size: 50px;
+  cursor: pointer;
+  top: 20px;
+}
+
+.dashboard-content {
+  position: absolute;
+  top: 0px;
+  left: 78px;
+  width: calc(100% - 300px);
+  transition: all 0.5s ease;
+
+}
+
+.dashboard-content h2 {
+  font-size: 25px;
+  margin: 12px;
+  color: var(--text-color);
+
+}
+
+/* toolipe */
+
+.toolipe {
+  position: absolute;
+  top: 0;
+  left: 122px;
+  transform: translate(-50%, -50%);
+  width: 122px;
+  height: 35px;
+  background-color: #fff;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.500);
+  text-align: center;
+  color: var(--text-color);
+  line-height: 35px;
+  transition: 0;
+  opacity: 0;
+}
+
+.sidebar ul li:hover .toolipe{
+  transition: all 0.5s ease;
+  top: 50%;
+  opacity: 1;
+}
+
+/* sidebar active */
+
+.sidebar.active {
+    width: 250px;
+}
+
+.dashboard-content.active {
+  left: 250px;
+}
+
+.sidebar.active .logo-content .logo{
+  opacity: 1;
+}
+
+.sidebar.active .menu{
+  left: 90%;
+}
+
+.sidebar.active .links-name{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar.active .profile-content .profile .profile-detail{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar.active .profile .logo-out {
+  left: 90%;
+}
+
+.sidebar.active .toolipe{
+  display: none;
+}
